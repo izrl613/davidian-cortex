@@ -1,33 +1,34 @@
-# Sovereign Digital Identity System
+# DAVIDIAN CORTEX
 
-A Zero-Knowledge Identity Sovereign platform allowing users to build, verify, and control their digital identity across 16 specialized vectors.
+Standalone project directory for Israel David's personal knowledge workspace, kept inside the `agape-sovereign` repository.
 
-## 🚀 Project Structure
-- `/frontend`: React/Next.js frontend with Interactive Identity Vector Modules and Passkey Auth.
-- `/backend`: Core logic for Architect AI and Verification Services.
-- `/agents`: 16 Specialized Third Party Agents for encrypted data handoff.
-- `/mcp-server`: Offline Knowledge Layer using `qwen3-vl:4b`.
-- `/deploy`: Deployment scripts for GCP VM and Docker.
+## Run locally
 
-## 🔐 Security Architecture
-- **Zero-Knowledge**: Data is encrypted at the agent level before reaching the backend.
-- **Passkey-Gated**: Final reports are only released upon hardware-backed WebAuthn verification.
-- **SHA256 Proof**: Every page features a real-time cryptographic heartbeat (ZK-PROOF) to verify session isolation.
-- **Local-First**: Architect AI runs via a local MCP server to prevent cloud data leaks.
+Requires Node.js LTS and npm:
 
-## 🧠 DAVIDIAN CORTEX
-The standalone personal knowledge app for Israel David lives in [`davidian-cortex/`](davidian-cortex/README.md). Run it with `cd davidian-cortex && npm install && npm run dev`, or build the macOS app on a Mac with `npm run build:mac`.
+```bash
+npm install
+npm run dev
+```
 
-## 🛠️ Quick Start
-1. **Deploy MCP Server**: 
-   ```bash
-   cd deploy && bash deploy.sh
-   ```
-2. **Install Frontend**:
-   ```bash
-   cd frontend && npm install && npm run dev
-   ```
-3. **Verify System**:
-   ```bash
-   npx ts-node verification-test.ts
-   ```
+## Build a macOS app
+
+On a Mac:
+
+```bash
+npm install
+npm run build:mac
+```
+
+This creates a `.dmg` and `.zip` in `desktop-dist/`. Or double-click `Build DAVIDIAN CORTEX.command` to install dependencies and build. Apple signing and notarization are not configured.
+
+## Project features
+
+- Personal knowledge overview and interactive graph
+- Upload files and whole nested folders
+- Import exported Gemini notebook and iCloud Notes files
+- Project spaces with descriptions and linked library files
+- Settings for display name, compact list density, local-data export, and clearing local data
+- Local question matching against text imported into the browser
+
+Cloud-drive live sync requires provider OAuth apps and a secure backend. Until configured, import folders already synced to your Mac. Imported workspace metadata is currently stored in the browser's local storage.
